@@ -1,858 +1,464 @@
-
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-<title>Erting Pan</title>
-
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<link rel="apple-touch-icon" sizes="180x180" href="icon_images/marceline_180.jpg">
-<link rel="icon" type="image/jpg" sizes="32x32" href="icon_images/marceline_32.jpg">
-<link rel="icon" type="image/jpg" sizes="16x16" href="icon_images/marceline_16.jpg">
-<link rel="manifest" href="icon_images/site.webmanifest">
-<link rel="stylesheet" href="css/academicons.min.css"/>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px; 
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1250px;
-  margin:auto;
-  text-align: justify;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="index.html">Erting Pan (潘尔婷)</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="mailto:panerting@whu.edu.cn">
-              <span class="fas fa-envelope fa-lg"></span></a> </li>
-          <li><a href="https://scholar.google.com/citations?user=dmHmfuYAAAAJ&hl=zh-CN&oi=ao">
-          <span class="ai ai-google-scholar ai-lg"></span></a></li>
-        <li><a href="https://github.com/EtPan">
-            <span class="fab fa-github fa-lg"></span></a></li>
-        <li> <a href="https://www.researchgate.net/profile/Erting-Pan">
-            <span class="ai ai-researchgate ai-lg"></span></a></li>
-        <li><a href="https://orcid.org/0000-0002-6969-7104">
-            <span class="ai ai-orcid ai-lg"></span></a></li>
-        </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div id="header"></div>
-
-<div class="row"><h1 class="optima" id="home">About me</h1></div>
-<div class="row">
-  <div class="column_info" style="column-gap:5px">
-    <p><span> Nice to meet you here!</span></p>
-    <p><span>I am <strong> a final-year Ph.D. candidate </strong> in the Electronic Information School, <a href="https://www.whu.edu.cn/">Wuhan University (WHU)</a>. I am fortunate to be advised by Prof. <a href="https://sites.google.com/site/jiayima2013/home">Jiayi Ma</a> and Prof. Yong Ma in the lab of <a href="http://mvp.whu.edu.cn/">Multi-spectral Vision Processing (MVP)</a>. I also closely work with A.P. <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a> here. Previously, I earned my B.Eng. degree from <a href="https://www.nenu.edu.cn/">Northeast Normal University (NENU)</a> in 2018, and was recommended as an exam-free student to WHU, where I began my M.Eng. degree and continued my education. These journeys are very valuable and interesting, and I always appreciate what I have learned and experienced.</span></p>
-
-    <p><span> My research pursues to model multi-modal and multi-dimensional data and develop cutting-edge solutions to advance next-generation intelligent perception. It primarily unfolds on two complementary levels: (a) computational imaging fundamentals; (b) application-oriented projects. I am passionate about exploring and implementing solutions to real-world problems, in order to make our lives better.</span></p>
-
-    <p><span>Currently, I am in the job market. I am excited to <strong> seek a postdoc position</strong> to continue advancing my research and applying my skills and expertise to new challenges.</span></p>
-    
-    <p><span> You can find my full CV <a href="myfiles/ErtingPan_CV.pdf">here</a>. </span></p>
-  </div>
-
-  <figure><p>
-  <img class="img-circle" src="myimages/profile.jpg" style="height:270px; margin-left:5px" align="right">
-  </p></figure>
-  <div id="navbar" class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="mailto:panerting@whu.edu.cn">
-            <span class="fas fa-envelope fa-lg"></span></a> </li>
-        <li><a href="https://scholar.google.com/citations?user=dmHmfuYAAAAJ&hl=zh-CN&oi=ao">
-        <span class="ai ai-google-scholar ai-lg"></span></a></li>
-      <li><a href="https://github.com/EtPan">
-          <span class="fab fa-github fa-lg"></span></a></li>
-      <li> <a href="https://www.researchgate.net/profile/Erting-Pan">
-          <span class="ai ai-researchgate ai-lg"></span></a></li>
-      </ul>
-  </div><!--/.nav-collapse -->
-</div>
-
-<div class="row">
-  <p><span>If you are interested in my research or would like to have a casual chat, please do not hesitate to contact me (panerting@whu.edu.cn).   </span></p>
-  <p><span>By the way, I am delighted to assist undergraduate students in their academic and personal growth. Whether you need guidance on course selection, advice on research, or support navigating the challenges of university life, I am available to help. Please feel free to ask any questions you may have, and I will offer my support to the best of my ability. </span></p>
-</div>
-
-<p> <br> </p>
-
-<div class="row"><h1 class="optima">Education</h1></div>
-  <div class="row">
-  <div class="column2" style="column-gap:10px">
-  <img src="myimages/Logo_WHU.jpg" style="height:120px; margin-right:5px" align="left"> 
-  </p>
-  <span> Ph.D. & M.Eng. in Signal and Information Processing </span><br> 
-  <span class="optima"> <strong>Wuhan University,</strong> <a href="http://mvp.whu.edu.cn/">MVPLab</a> </span><br> <span> <em>Wuhan, China</em> </span><br> 
-  <span> <em>2018 - present</em> </span>
-  </div>
-
-  <div class="column2"style="column-gap:20px">
-  </p><img src="myimages/Logo_NENU.png" style="height:110px; margin-right:5px" align="left" > 
-  </p>
-  <span> B.Eng. in Electrical Engineering and its Automation </span><br> 
-  <span class="optima"> <strong>Northeast Normal University</strong> </span><br> 
-  <span> <em>Changchun, China</em> </span><br> 
-  <span> <em>2014 - 2018</em> </span></p>
-  </div></div>  
-  <p> <br> </p>
-  <div class="row"><h1 class="optima">Research</h1></div>
-    <div class="row">
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-  
-    <tr>
-      <td style="padding:0px;width:60%;vertical-align:middle">
-        <a style="font-size: large; font-weight: bold;">Multi-modal Fusion-based  Hyperspectral Image Generation</a><br>
-        <div style="font-size: small;font-weight: bold;">Ongoing</div><p></p>
-        <p>Acquiring and processing hyperspectral data can be time-consuming and expensive, which causes a series of issues involving data scarcity, class skew, and target background restriction. It hinders the progress of large-scale AI-based studies and a range of applications. </p>
-        <p>To this end, we tend to raise a new paradigm of HSI generation, generating a vast amount of HSI with a rich diversity in various categories and scenes, closely resembling realistic data. </p>
-        <p>See the project page <a href="https://yuyang95.github.io/HSI-Synthesis.github.io/">here</a>.</p>
-      </td>
-      <td style="padding:20px;width:30%;vertical-align:middle">
-       <img src="myimages/HSI_Generation.png" width="280">
-      </td>
-    </tr>
-    <p></p><p></p>
-    <tr>
-      <td style="padding:0px;width:60%;vertical-align:middle">
-        <a style="font-size: large; font-weight: bold;">Robust Hyperspectral Image Restoration for Complex Degradation</a><br>
-        <div style="font-size: small;font-weight: bold;">Ongoing</div><p></p>
-        <p>Hyperspectral images are often affected by noise due to unstable factors in the complex imaging chain. This noise can significantly degrade the content and visual quality of the images, hindering their analysis and interpretation. </p>
-        <p>To alleviate these issues, we take advantage of the inherent characteristics of hyperspectral images and unique properties of hyperspectral degradation and incorporate both data-driven and model-driven strategies to propose a series of denoising and destriping methods. </p>
-        <p>See publications <a href="#J1" >[J1]</a>, <a href="#J2" >[J2]</a>, <a href="#J3" >[J3]</a>, <a href="#J7" >[J7]</a>, <a href="#J8" >[J8]</a>.</p>
-      </td>
-      <td style="padding:20px;width:30%;vertical-align:middle">
-       <img src="myimages/HSI_Restoration.png" width="280">
-      </td>
-    </tr>
-      <p></p><p></p>
-    
-    <tr>
-      <td style="padding:0px;width:60%;vertical-align:middle">
-      <a style="font-size: large; font-weight: bold;">Model-based Deep Learning Hyperspectral Image Classification</a><br>
-      <div style="font-size: small;font-weight: bold;">Prospective</div><p></p>
-      <p>A hyperspectral image is a three-dimensional data cube with high dimensionality, a strong correlation between adjacent bands, a highly nonlinear data structure, and few training samples. These characteristics make the hyperspectral image classification task challenging. </p>
-      <p>To tackle these challenges, we have endeavored to develop methods that improve classification accuracy, efficiency, and generalization ability. </p>
-      <p>See publications  <a href="#J4" >[J4]</a>, <a href="#J5" >[J5]</a>, <a href="#J6" >[J6]</a>, <a href="#C1" >[C1]</a>, <a href="#C2" >[C2]</a>, <a href="#C3" >[C3]</a>, <a href="#C4" >[C4]</a>.</p>
-      </td>
-      <td style="padding:20px;width:30%;vertical-align:middle">
-       <img src="myimages/HSI_Classification.png" width="280">
-      </td>
-    </tr>
-    </tbody>
-    </table>
-    </div>
-<p> <br> </p>
-
-<div class="row">
-<h1 class="optima" id="pub">Publications</h1></div>
-<div class="row" style="margin-top:-5px">
-  <p>The full publication list can be seen in <a href="https://scholar.google.com/citations?user=dmHmfuYAAAAJ&hl=zh-CN&oi=ao">Google Scholar</a>.</p>
-  <p>Click here and jump to:   <a href="#jour" style="font-family:optima">Journal papers</a>, <a href="#pre" style="font-family:optima">Preprints</a>,  <a href="#conf" style="font-family:optima">Conference papers</a>.</p>
-</div>
-
-<div class="row" style="margin-top:-5px; margin-bottom:0px">
-<h3 class="optima" id="jour">Journal papers</h3></div>
-  
-<div class="row">
-  <div class="column_paper" style="column-gap:10px">
-  <span class="optima" id="J1"> [J1] <strong>Hyperspectral Image Denoising via Spectral Noise Distribution Bootstrap</strong> </span><br> 
-  <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br> 
-  <span> <em>Pattern Recognition(PR). In Press.</em> </span><br> 
-  <span> <a href="https://doi.org/10.1016/j.patcog.2023.109699"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2023PR_N-Net.pdf"><i class="fas fa-file-pdf"></i> [Paper]</a> &nbsp &nbsp
-    <a href="https://github.com/EtPan/N-Net"><i class="fas fa-code"></i> [Code]</a> </span><br>
-  </p></div>
-  <figure>
-  <p><img src="myimages/2023PR_NNet.png" height="95px" width="auto" align="right">
-  </figure>
-</div>
-
-
-<div class="row">
-  <div class="column_paper" style="column-gap:10px">
-  <span class="optima" id="J2"> [J2]   <strong>D2Net: Deep Denoising Network in Frequency Domain for Hyperspectral Image</strong> </span><br> 
-  <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Jun Huang, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br> 
-  <span> <em>IEEE/CAA Journal of Automatica Sinica, 2023.</em> </span><br> 
-  <span> <a href="https://ieeexplore.ieee.org/abstract/document/9910374"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2023JAS_D2Net.pdf"><i class="fas fa-file-pdf"></i> [Paper]</a> &nbsp &nbsp
-    <a href="https://github.com/EtPan/D2Net"><i class="fas fa-code"></i> [Code] </a> </span><br>
-  </p></div>
-  <figure>
-  <p><img src="myimages/2023JAS_D2Net.png" height="100px" width="auto" align="right">
-  </figure>
-</div>
-
-  <div class="row">
-    <div class="column_paper" style="column-gap:10px">
-    <span class="optima" id="J3"> [J3] <strong>SQAD: Spatial-Spectral Quasi-Attention Recurrent Network for Hyperspectral Image Denoising</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, Jun Huang, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br> 
-    <span> <em>IEEE Transactions on Geoscience and Remote Sensing, 2022.</em> </span><br> 
-    <span><a href="https://ieeexplore.ieee.org/abstract/document/9732909"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2022TGRS_SQAD.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> &nbsp &nbsp
-    <a href="https://github.com/EtPan/SQAD"><i class="fas fa-code"></i>[Code]</a> </span><br>
-    </p></div>
-    <figure>
-    <p><img src="myimages/2022TGRS_SQAD.png" height="100px" width="auto" align="right">
-    </figure>
-  </div>
-
-  <div class="row">
-    <div class="column_paper" style="column-gap:10px">
-    <span class="optima" id="J4"> [J4] <strong>Hyperspectral Image Classification across Different Datasets: A Generalization to Unseen Categories</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, Fan Fan, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, and Jun Huang </span><br> 
-    <span> <em>Remote Sensing, 2021.</em> </span><br> 
-    <span><a href="https://doi.org/10.3390/rs13091672"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2021RS_ZSL.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> &nbsp &nbsp
-    <!--a href="https://github.com/EtPan/SQAD"><i class="fas fa-code"></i> code</a--> 
-    </span><br>
-    </p></div>
-    <figure>
-    <p><img src="myimages/2021RS_ZSL.png" height="110px" width="auto" align="right">
-    </figure>
-    </div>
-
-  <div class="row">
-    <div class="column_paper" style="column-gap:10px">
-    <span class="optima" id="J5"> [J5] <strong>Spectral-Spatial Classification for Hyperspectral Image Based on a Single GRU</strong> </span><br> 
-    <span> <u>Erting Pan</u>, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Ma Yong, Quande Wang, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br> 
-    <span> <em>Neurocomputing, 2020.</em> </span><br> 
-    <span><a href=" https://doi.org/10.1016/j.neucom.2020.01.029"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2020NeuroCom_SPGRU.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> 
-    <!--a href="https://github.com/EtPan/SQAD"><i class="fas fa-code"></i> code</a--> 
-    </span><br>
-    </p></div>
-    <figure>
-    <p><img src="myimages/2020NeuCom_SPGRU.png" height="63px" width="auto" align="right">
-    </figure>
-    </div>
-
-  <div class="row">
-    <div class="column_paper" style="column-gap:10px">
-    <span class="optima" id="J6"> [J6] <strong>Spectral-Spatial Attention Networks for Hyperspectral Image Classification</strong> </span><br> 
-    <span> <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, <u>Erting Pan</u>, Ma Yong, Xiaobing Dai, Jun Huang, Fan Fan, Qinglei Du, Hong Zheng, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br> 
-    <span> <em>Neurocomputing, 2020.</em> </span><br> 
-    <span> <a href="https://doi.org/10.3390/rs11080963"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2019RS_SSAN.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> &nbsp &nbsp
-    <a href="https://github.com/EtPan/SSAN"><i class="fas fa-code"></i>[Code]</a> 
-    </span><br>
-    </p></div>
-    <figure>
-    <p><img src="myimages/2019RS_SSAN.png"  height="92px" width="auto" align="right">
-    </figure>
-    </div>
-
-<div class="row" style="margin-top:-5px; margin-bottom:0px">
-<h3 class="optima" id="pre">Preprints</h3></div>
-
-  <div class="row">
-    <div class="column_paper" style="column-gap:10px">
-    <span class="optima" id="J7"> [J7] <strong>Progressive Hyperspectral Image Destriping with An Adaptive Frequencial Focus</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br>  
-    <span> <em>Under Review.</em> </span><br> 
-    <span> <a href="mypapers/2023Preprints-PHID.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> &nbsp &nbsp
-    <a href="https://github.com/EtPan/PHID"><i class="fas fa-code"></i>[Code]</a> 
-    </span><br>
-    </p></div>
-    <figure>
-    <p><img src="myimages/2023Preprints_PHID.png" height="90px" width="auto" align="right">
-    </figure>
-    </div>
-
-  <div class="row">
-    <div class="column_paper" style="column-gap:10px">
-    <span class="optima" id="J8"> [J8] <strong>Hyperspectral Image Destriping and Denoising from a Task Decomposition View</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br>  
-    <span> <em>Under Review.</em> </span><br> 
-    <span> <a href="mypapers/2023.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> 
-    <!--a href="https://github.com/EtPan/SSAN"><i class="fas fa-code"></i> code</a--> 
-    </span><br>
-    </p></div>
-    <figure>
-    <p><img src="myimages/2023PR-MTL.png" height="100px" width="auto" align="right">
-    </figure>
-    </div>
-
-<div class="row" style="margin-top:-5px; margin-bottom:0px">
-<h3 class="optima" id="conf">Conference papers</h3></div>
-
-  <div class="row">
-    <div class="column_conf">
-    <span class="optima" id="C1"> [C1] <strong>Unsupervised Stacked Capsule Autoencoder for Hyperspectral Image Classification</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br>  
-    <span> <em> IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Toronto, Canada, Jun.2021.</em> </span><br> 
-    <span><a href="https://www.2021.ieeeicassp.org/2021.ieeeicassp.org/papers/ViewPaper481e.html?PaperNum=4738"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2021ICASSP.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> &nbsp &nbsp
-    <a href="mypapers/Slides_ICASSP2021.pdf"><i class="fab fa-slideshare"></i>[Slide]</a> 
-    </span><br>
-    </p>
-    </div></div>
-
-  <div class="row">
-    <div class="column_conf">
-    <span class="optima" id="C2"> [C2]  <strong>Hyperspectral Image Classification Based on Zero-shot Learning</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br>  
-    <span> <em>The 5th Symposium on Hyperspectral Imaging Technology and Applications, Shanghai, China, Oct.2020.</em> </span><br> 
-    <span> <a href="https://b2b.csoe.org.cn/meeting/GGP2020.html"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2020GGP-09-002.pdf"><i class="fas fa-file-pdf"></i> [Paper]</a> &nbsp &nbsp
-    <a href="mypapers/Slides_GGP2020pdf.pdf"><i class="fab fa-slideshare"></i>[Slide]</a> 
-    </span><br>
-    </p>
-    </div></div>
-
-  <div class="row">
-    <div class="column_conf">
-    <span class="optima" id="C3"> [C3]  <strong>GRU with Spatial Prior for Hyperspectral Image Classification</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br>  
-    <span> <em>IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Yokohama, Japan, Jul.2019.</em> </span><br> 
-    <span> <a href="https://igarss2019.org/papers/Viewpapers.asp?PaperNum=3955"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2019IGRASS_SPGRU.pdf"><i class="fas fa-file-pdf"></i>[Paper]</a> &nbsp &nbsp
-    <a href="mypapers/Slides_IGARSS2019_SSGRU.pdf"><i class="fab fa-slideshare"></i>[Slide]</a> 
-    </span><br>
-    </p>
-    </div></div>
-      
-  <div class="row">
-    <div class="column_conf">
-    <span class="optima" id="C4"> [C4]  <strong>Spectral-Spatial Classification of Hyperspectral Image Based on a Joint Attention Network</strong> </span><br> 
-    <span> <u>Erting Pan</u>, Ma Yong, <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a>, Fan Fan, and <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> </span><br>  
-    <span> <em>IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Yokohama, Japan, Jul.2019.</em> </span><br> 
-
-    <span> <a href="https://igarss2019.org/papers/Viewpapers.asp?PaperNum=1663"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
-    <a href="mypapers/2019IGRASS_SSAN.pdf"><i class="fas fa-file-pdf"></i> [Paper]</a> &nbsp &nbsp
-    <a href="mypapers/Slides_IGARSS2019_SSAN.pdf"><i class="fab fa-slideshare"></i> [Slide]</a> 
-    </span><br>
-  </div></div>
-  <p> <br> </p>
-
-<div class="row">
-  <h1 class="optima" id="serve">Service</h1></div>
-  <div class="row" style="margin-top:-5px; margin-bottom:0px">
-    <h3 class="optima" id="conf">Reviewer</h3></div>
-    <div class="row">
-    <div class="column_conf">
-    <span class="optima"> Information Fusion</span><br>  
-    <span class="optima"> IEEE Transactions on Image Processing (TIP)</span><br>  
-    <span class="optima"> IEEE/CAA Journal of Automatica Sinica (JAS)</span><br> 
-    <span class="optima"> IEEE Transactions on Geoscience and Remote Sensing (TGRS)</span><br> 
-    <span class="optima"> Neural Networks</span><br> 
-    <span class="optima"> Neurocomputing</span><br> 
-    </div></div>
-
-    <div class="row" style="margin-top:-5px; margin-bottom:0px"><h3 class="optima" id="conf">Student Editor</h3></div>
-      <div class="row">
-      <div class="column_conf">
-      <span class="optima"> <strong><a href="https://www.tandfonline.com/journals/tgsi20">Geo-Spatial Information Science</a>,</strong> Since 2022</span><br>  
-      </div></div>
-
-    <div class="row" style="margin-top:-5px; margin-bottom:0px"><h3 class="optima" id="conf">Teaching Assistant</h3></div>
-    <div class="row">
-    <div class="column_conf">
-    <span class="optima"> <strong>Engineering Stochastic Mathematics,</strong> Undergraduate course, WHU, 2021 Fall</span><br>  
-    </div></div>
-
-    
-
-    
-<p> <br> </p>
-
-<div class="row"><h1 class="optima" id="honor">Awards</h1></div>
-  <div class="row" style="margin-top:-5px; margin-bottom:0px">
-    <h3 class="optima" id="conf">Contest Rewards</h3></div>
-    <div class="row"><div class="column_conf">
-      <span class="optima"> [2021] <strong>Bronze Medalist</strong> in the 18th China Post-Graduate Mathematical Contest in Modeling</span><br>  
-      <span class="optima"> [2020] <strong>Runner-up</strong> in the 17th China Post-Graduate Mathematical Contest in Modeling</span><br>  
-      <span class="optima"> [2019] <strong>Bronze Medalist</strong> in Tianchi Global Data Intelligence Competition</span><br> 
-    </div></div>
-
-    <div class="row" style="margin-top:-5px; margin-bottom:0px">
-      <h3 class="optima" id="conf">Honors</h3></div>
-      <div class="row"><div class="column_conf">
-        <span class="optima"> [2022] Excellent Postgraduate in WHU</span><br>  
-        <span class="optima"> [2021] Excellent Postgraduate in WHU</span><br>  
-        <span class="optima"> [2016] Merit Undergraduate in NENU</span><br>  
-      </div></div>
-
-  <div class="row" style="margin-top:-5px; margin-bottom:0px">
-    <h3 class="optima" id="conf">Scholarships</h3></div>
-    <div class="row"><div class="column_conf">
-      <span class="optima"> [2022] Ruan Liping Post-Graduate Scholarship in WHU</span><br>  
-      <span class="optima"> [2022] Outstanding Academic Scholarship (Grade 1) in WHU</span><br> 
-      <span class="optima"> [2021] Huawei Post-Graduate Scholarship in WHU</span><br> 
-      <span class="optima"> [2021] Outstanding Academic Scholarship (Grade 1) in WHU</span><br> 
-      <span class="optima"> [2019] Outstanding Academic Scholarship (Grade 1) in WHU</span><br> 
-      <span class="optima"> [2016] The First-Class Scholarship in NENU</span><br> 
-      <span class="optima"> [2016] Outstanding Student Cadres Scholarship in NENU</span><br> 
-      <span class="optima"> [2016] Academic Specialty Scholarship in NENU</span><br> 
-    </div></div>
-<p> <br> </p>
-
-<div class="row">
-<h1 class="optima" id="misc">Miscellaneous </h1></div>
-<div class="row" style="margin-top:-5px">
-<p>I am a longtermist. Outside my research, I enjoy outdoor excercise such as jogging, riding, and hiking.</p>
-</div>
-
-<style type="text/css">
-#TOC {
-  left: 50px;
-  width: 200px;
-  margin: 20px 0px 0px 0px;
-}
-
-.main-container {
-    margin:auto;
-}
-</style>
-<style type="text/css">
-.column {
-  float: left;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 20%;
-}
-
-.column2 {
-  float: left;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 45%;
-}
-
-.column3 {
-  float: left;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: 33%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-
-.column_info {
-  float: left;
-  margin-left: 0px;
-  width: 70%
-}
-
-.column_paper {
-  float: left;
-  margin-left: 5px;
-  width: 70%;
-  line-height: 1.75em
-}
-
-.column_conf {
-  float: left;
-  margin-left: 5px;
-  width: 100%;
-  line-height: 1.75em
-}
-
-.left_paper {
-  width: 27%;
-}
-
-.img-circle {
-    border-radius: 50%;
-}
-
-
-h1.optima{
-  font-size: 25px;
-  font-family: optima;
-  margin-bottom: 10pt
-}
-
-
-h3.optima{
-  font-size: 20px;
-  font-family: optima;
-  color:#14BB9A
-}
-
-
-span.optima{font-family:optima, Sans-serif}
-</style>
-
-
-
-</div>
-</div>
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables color:#14BB9A
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
+	<head>
+		<title>Erting Pan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar"><img src="files/images/profile.jpg" alt="" /></span><br>
+							<h1 id="logo">Erting Pan (潘尔婷)</h1>
+							<p>Computer Vision for Intelligence Perception, Earth Oberservation, and Sustainability</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-home">About</span></a></li>
+								<li><a href="#school" id="class-link"><span class="icon solid fa-user-graduate">Education</span></a></li>
+								<li><a href="#research" id="work-link"><span class="icon solid fa-robot">Research</span></a></li>
+								<li><a href="#publications" id="pubs-link"><span class="icon solid fa-book">Publications</span></a></li>
+								<li><a href="#services" id="teach-link"><span class="icon solid fa-lightbulb">Services</span></a></li>
+								<li><a href="#awards" id="teach-link"><span class="icon solid fa-award">Awards</span></a></li>
+								<li><a href="#miscs" id="contact-link"><span class="icon solid fa-mountain">Miscellaneous</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:panerting@whu.edu.cn" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://scholar.google.com/citations?user=dmHmfuYAAAAJ&hl=zh-CN&oi=ao" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</a></li>
+							<li><a href="https://github.com/EtPan" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.researchgate.net/profile/Erting-Pan" class="icon brands fa-researchgate"><span class="label">Reserachgate</span></a></li>
+							<li><a href="https://orcid.org/0000-0002-6969-7104" class="icon brands fa-orcid"><span class="label">ORCID</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->			
+			<div id="main">
+				<!-- About Me -->
+				<section id="about" class="two">
+					<div class="container">
+						<header>
+							<h3>About</h3>
+						</header>
+						<p>
+							&#128075; Nice to meet you here!
+						</p>
+    					<p>
+						   I am <strong>a final-year Ph.D. candidate</strong> in the Electronic Information School, 
+						   <a href="https://www.whu.edu.cn/">Wuhan University (WHU)</a>. I am fortunate to be advised by 
+						   Prof. <a href="https://sites.google.com/site/jiayima2013/">Jiayi Ma</a> and Prof. Yong Ma 
+						   in the lab of <a href="http://mvp.whu.edu.cn/">Multi-spectral Vision Processing (MVP)</a>. 
+						   I also closely work with A.P. <a href="https://meixiaoguang.github.io/EN/">Xiaoguang Mei</a> here. 
+						   Previously, I earned my B.Eng. degree from 
+						   <a href="https://www.nenu.edu.cn/">Northeast Normal University (NENU)</a> in 2018, and was recommended 
+						   as an exam-free student to WHU, where I began my M.Eng. degree and continued my education. 
+						   <br> 
+						    These journeys are very valuable and interesting, and I always appreciate what I have 
+							learned and experienced.
+						</p>
+    					<p>
+							My research pursues to model multi-modal and multi-dimensional data and develop cutting-edge solutions 
+							to advance next-generation intelligent perception. It primarily unfolds on two complementary levels: 
+							(a) computational imaging fundamentals; (b) application-oriented projects. I am passionate about exploring 
+							and tackling real-world challenges,  and I hope to contribute to a better understanding of the world around us.
+							<br>
+							If you are interested in my research or would like to have a casual chat, please do not hesitate 
+							to contact me.
+						</p>
+    					<p>
+							&#128276; Currently, I am in the job market. I am excited to <strong> seek a postdoc position</strong> to 
+							continue advancing my research and applying my skills and expertise to new challenges. 
+							You can find my full CV <a href="files/cv/ErtingPan_CV.pdf">here</a>. 	
+						</p>
+    					<p>
+							&#128226; By the way, I am delighted to assist undergraduate students in their academic and personal growth.
+							Whether you need guidance on course selection, advice on research, or support navigating the challenges 
+							of university life, I am available to help. Please feel free to ask any questions you may have, and I 
+							will offer my support to the best of my ability.
+						</p>
+
+					</div>
+				</section>
+
+				<!-- Education -->
+				<section id="school" class="seven">
+					<div class="container">
+
+						<header>
+							<h3>Education</h3>
+						</header>
+
+						<div class="row">
+							<div class = "col-4-normal" style="column-gap:10px">
+								<a class="image"><img src="files/images/Logo_WHU.jpg" style="width:120px; margin-right:5px; vertical-align:middle" align="left"></a>
+							</div>
+							<div class = "col-4-normal">
+								<span> Ph.D. & M.Eng. in Signal and Information Processing </span><br> 
+								<span class="optima">Wuhan University, Wuhan, China</span><br> 
+								<span> <em>2018 - present</em> </span>
+							</div>
+						</div>  
+						</p>
+						<div class="row">
+							<div class = "col-4-normal">
+								<a class="image"><img src="files/images/Logo_NENU.png" style="width:130px; margin-right:0px;vertical-align:middle" align="left"></a>
+							</div>
+							<div class = "col-4-normal">
+								<span> B.Eng. in Electrical Engineering and its Automation </span><br> 
+								<span class="optima"> Northeast Normal University, Changchun, China </span><br> 
+								<span> <em>2014 - 2018</em> </span>
+							</div>
+						</div>  
+					</div>
+				</section>
+
+				<!-- Work Experience -->
+					<section id="research" class="three">
+						<div class="container">
+
+							<header>
+								<h3>Research</h3>
+							</header>
+
+							<div class="features">
+								<article>
+									<p>
+										<span class="project"> Multi-modal Fusion-based  Hyperspectral Image Generation</span><span class="status">Ongoing</span>
+									</p>
+
+									<a class="image"><img src="files/images/HSI_Generation.png" alt></a>
+									<div class="inner">
+										<p>
+											<span>Acquiring and processing hyperspectral data can be time-consuming and expensive, which causes a series 
+												  of issues involving data scarcity, class skew, and target background restriction. It hinders the progress 
+												  of large-scale AI-based studies and a range of applications. </span><br>
+											<span> To this end, we tend to raise a new paradigm of HSI generation, generating a vast amount of HSI with a 
+												   rich diversity in various categories and scenes, closely resembling realistic data. </span><br>
+											<span> See the project page <a href="https://yuyang95.github.io/HSI-Synthesis.github.io/">here</a>.</span><br>
+										</p>
+									</div>
+									
+								</article>
+
+								<article>
+									<p>
+										<span class="project">Robust Hyperspectral Image Restoration for Complex Degradation</span><span class="status">Ongoing</span>
+									</p>
+									<a class="image"><img src="files/images/HSI_Restoration.png" alt></a>
+									<div class="inner">
+										<p>
+											<span> Hyperspectral images are often affected by noise due to unstable factors in the complex imaging chain. 
+												   This noise can significantly degrade the content and visual quality of the images, hindering their 
+												   analysis and interpretation. </span><br>
+											<span> To alleviate these issues, we take advantage of the inherent characteristics of hyperspectral images 
+												   and unique properties of hyperspectral degradation and incorporate both data-driven and model-driven 
+												   strategies to propose a series of denoising and destriping methods.</span><br>
+											<span> See publications <a href="#J4" >[J4]</a>, <a href="#J5" >[J5]</a>, <a href="#J6" >[J6]</a>, 
+													<a href="#J7" >[J7]</a>, <a href="#J8" >[J8]</a>.</span><br>
+										</p>
+									</div>
+								</article>
+
+								<article>
+									<p>
+										<span class="project">Model-based Deep Learning Hyperspectral Image Classification</span><span class="status">Prospective</span>
+									</p>
+									<a class="image"><img src="files/images/HSI_Classification.png" alt></a>
+									<div class="inner">
+										<p>	
+											<span> A hyperspectral image is a three-dimensional data cube with high dimensionality, a strong 
+												correlation between adjacent bands, a highly nonlinear data structure, and few training samples. 
+												These characteristics make the hyperspectral image classification task challenging. </span><br>
+										 	<span> To tackle these challenges, we have endeavored to develop methods that improve classification 
+												accuracy, efficiency, and generalization ability. </span><br>
+										 	<span> See publications  <a href="#J1" >[J1]</a>, <a href="#J2" >[J2]</a>, <a href="#J3" >[J3]</a>, 
+												<a href="#C1" >[C1]</a>, <a href="#C2" >[C2]</a>, <a href="#C3" >[C3]</a>, <a href="#C4" >[C4]</a>.</span><br>
+										</p>
+									</div>
+								</article>
+								
+							</div>
+						</div>
+					</section>
+
+				<!-- Publications -->
+					<section id="publications" class="four">
+						<div class="container">
+
+							<header>
+								<h3>Publications</h3>
+							</header>
+
+							<p> 
+								This includes some of my recent publications. Check <a href="https://scholar.google.com/citations?user=dmHmfuYAAAAJ&hl=zh-CN&oi=ao">Google Scholar</a> for a more complete list.<br> 
+								Click here and jump to:   <a href="#jour" >Journal Papers</a>, <a href="#pre">Preprints</a>,  <a href="#conf">Conference Papers</a>.
+							</p>
+							
+							<header>
+								<h4 id = "jour">Journal Papers</h4>
+							</header>
+							
+							<dl>
+								<li>
+									<span class="bold" id="J1"> <strong>Spectral-Spatial Attention Networks for Hyperspectral Image Classification</strong> </span><br> 
+									<span> Xiaoguang Mei, <b><u> Erting Pan</u></b>, Ma Yong, Xiaobing Dai, 
+											Jun Huang, Fan Fan, Qinglei Du, Hong Zheng, and Jiayi Ma </span><br> 
+									<span> <em>Remote Sensing, 2019.</em> </span><br> 
+									<span> <a href="https://doi.org/10.3390/rs11080963"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
+									<a href="files/papers/2019RS_SSAN.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+									<a href="https://github.com/EtPan/SSAN"><i class="fas fa-code"></i> [Code]</a> 
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="J2"> <strong>Spectral-Spatial Classification for Hyperspectral Image Based on a Single GRU</strong> </span><br> 
+									<span> <b><u> Erting Pan</u></b>, Xiaoguang Mei, Ma Yong, Quande Wang, and Jiayi Ma </span><br> 
+									<span> <em>Neurocomputing, 2020.</em> </span><br> 
+									<span> <a href=" https://doi.org/10.1016/j.neucom.2020.01.029"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
+											<a href="files/papers/2020NeuroCom_SPGRU.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a>
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="J3"> <strong>Hyperspectral Image Classification across Different Datasets: A Generalization to Unseen Categories</strong> </span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Fan Fan, Xiaoguang Mei, and Jun Huang </span><br> 
+									<span> <em>Remote Sensing, 2021.</em> </span><br> 
+									<span> <a href="https://doi.org/10.3390/rs13091672"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
+											<a href="files/papers/2021RS_ZSL.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> 
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="J4"> <strong>SQAD: Spatial-Spectral Quasi-Attention Recurrent Network for Hyperspectral Image Denoising</strong> </span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, Jun Huang, and Jiayi Ma </span><br> 
+									<span> <em>IEEE Transactions on Geoscience and Remote Sensing, 2022.</em> </span><br> 
+									<span> <a href="https://ieeexplore.ieee.org/abstract/document/9732909"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
+											<a href="files/papers/2022TGRS_SQAD.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+											<a href="https://github.com/EtPan/SQAD"><i class="fas fa-code"></i> [Code]</a>
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="J5"> <strong>D2Net: Deep Denoising Network in Frequency Domain for Hyperspectral Image</strong> </span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Jun Huang, Fan Fan, and Jiayi Ma</span><br> 
+									<span> <em>IEEE/CAA Journal of Automatica Sinica, 2023.</em> </span><br> 
+									<span> <a href="https://ieeexplore.ieee.org/abstract/document/9910374"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
+											<a href="files/papers/2023JAS_D2Net.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+											<a href="https://github.com/EtPan/D2Net"><i class="fas fa-code"></i> [Code] </a> 
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="J6"> <strong>Hyperspectral Image Denoising via Spectral Noise Distribution Bootstrap</strong> </span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br> 
+									<span> <em>Pattern Recognition(PR), 2023.</em> </span><br> 
+									<span> <a href="https://doi.org/10.1016/j.patcog.2023.109699"><i class="fas fa-link"></i> [URL]</a> &nbsp &nbsp
+										   <a href="files/papers/2023PR_N-Net.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+										   <a href="https://github.com/EtPan/N-Net"><i class="fas fa-code"></i> [Code]</a> 
+									</span><br>
+								</li>
+
+							</p>
+							<header style="text-indent:-1.5em">
+								<h4 id = "pre">Preprints</h4>
+							</header>
+			
+								<li>
+									<span class="bold" id="J7"> <strong>Progressive Hyperspectral Image Destriping with An Adaptive Frequencial Focus</strong> </span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br>  
+									<span> <em>Under Review.</em> </span><br> 
+									<span> <a href="files/papers/2023Preprints-PHID.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+										   <a href="https://github.com/EtPan/PHID"><i class="fas fa-code"></i> [Code]</a> 
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="J8"> <strong>Hyperspectral Image Destriping and Denoising from a Task Decomposition View</strong></span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br>  
+									<span> <em>Under Review.</em> </span><br> 
+									<span> <a href="files/papers/2023.pdf"><i class="fas fa-file-pdf"></i> [Pdf]</a> 
+									</span><br>
+								</li>
+							</dl>
+
+							<header>
+								<h4 id = "conf" >Conference Papers</h4>
+							</header>
+							
+							<ol>
+								<li>
+									<span class="bold" id="C1"> <strong>GRU with Spatial Prior for Hyperspectral Image Classification</strong></span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br>  
+									<span> <em>IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Yokohama, Japan, Jul.2019.</em> </span><br> 
+									<span>  <a href="https://igarss2019.org/papers/Viewpapers.asp?PaperNum=3955"><i class="icon solid fa-link"></i> [URL]</a> &nbsp &nbsp
+											<a href="files/papers/2019IGRASS_SPGRU.pdf"><i class="icon solid fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+											<a href="files/slides/Slides_IGARSS2019_SSGRU.pdf"><i class="icon brands fa-slideshare"></i> [Slides]</a>
+									</span><br>
+								</li>
+								<li>
+									<span class="bold" id="C2"><strong>Spectral-Spatial Classification of Hyperspectral Image Based on a Joint Attention Network</strong></span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br>  
+									<span> <em>IEEE International Geoscience and Remote Sensing Symposium (IGARSS), Yokohama, Japan, Jul.2019.</em> </span><br> 
+								
+									<span> <a href="https://igarss2019.org/papers/Viewpapers.asp?PaperNum=1663"><i class="icon solid fa-link"></i> [URL]</a> &nbsp &nbsp
+									<a href="files/papers/2019IGRASS_SSAN.pdf"><i class="icon solid fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+									<a href="files/slides/Slides_IGARSS2019_SSAN.pdf"><i class="icon brands fa-slideshare"></i> [Slides]</a>
+										</span><br>
+								</li>
+								<li>
+									<span class="bold" id="C3"><strong>Hyperspectral Image Classification Based on Zero-shot Learning</strong></span><br> 
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br>  
+									<span> <em>The 5th Symposium on Hyperspectral Imaging Technology and Applications, Shanghai, China, Oct.2020.</em> </span><br> 
+									<span> <a href="https://b2b.csoe.org.cn/meeting/GGP2020.html"><i class="icon solid fa-link"></i> [URL]</a> &nbsp &nbsp
+										<a href="files/papers/2020GGP-09-002.pdf"><i class="icon solid fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+										<a href="files/slides/Slides_GGP2020pdf.pdf"><i class="icon brands fa-slideshare"></i> [Slides]</a> 
+										</span><br>
+								</li>
+								<li>
+									<span class="bold" id="C4"><strong>Unsupervised Stacked Capsule Autoencoder for Hyperspectral Image Classification</strong></span><br>
+									<span> <b><u> Erting Pan</u></b>, Ma Yong, Xiaoguang Mei, Fan Fan, and Jiayi Ma </span><br> 
+									<span> <em> IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Toronto, Canada, Jun.2021.</em> </span><br> 
+									<span> <a href="https://www.2021.ieeeicassp.org/2021.ieeeicassp.org/papers/ViewPaper481e.html?PaperNum=4738"><i class="icon solid fa-link"></i> [URL]</a> &nbsp &nbsp
+											<a href="files/papers/2021ICASSP.pdf"><i class="icon solid fa-file-pdf"></i> [Pdf]</a> &nbsp &nbsp
+											<a href="files/slides/Slides_ICASSP2021.pdf"><i class="icon brands fa-slideshare"></i> [Slides]</a> 
+									</span><br>
+								</li>
+							</ol>
+
+						</div>
+					</section>
+
+				
+				<!-- Services -->
+				<section id="services" class="six">
+					<div class="container">
+						<header>
+							<h3>Service</h3>
+						</header>
+						<header>
+							<h4>Journal Reviewer</h4>
+						</header>
+
+						<ul>
+							<li>Information Fusion</li>
+							<li>IEEE Transactions on Image Processing (TIP)</li>
+							<li>IEEE/CAA Journal of Automatica Sinica (JAS)</li>
+							<li>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</li>
+							<li>Neural Networks</li>
+							<li>Neurocomputing</li>
+						</ul>
+
+						<header>
+							<h4>Student Editor</h4>
+						</header>
+
+						<ul>
+							<li><a href="https://www.tandfonline.com/journals/tgsi20">Geo-Spatial Information Science</a>, Since 2022</li>
+						</ul>
+
+						<header>
+							<h4>Teaching Assistant</h4>
+						</header>
+
+						<ul>
+							<li>Engineering Stochastic Mathematics, Undergraduate course, WHU, 2021 Fall</li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Awards -->
+				<section id="awards" class="six">
+					<div class="container">
+						<header>
+							<h3>Awards</h3>
+						</header>
+						<header>
+							<h4>Contest Rewards</h4>
+						</header>
+
+						<ul>
+							<li>[2021] <strong>Bronze Medalist</strong> in the 18th China Post-Graduate Mathematical Contest in Modeling </li>
+							<li>[2020] <strong>Runner-up</strong> in the 17th China Post-Graduate Mathematical Contest in Modeling</li>
+							<li>[2019] <strong>Bronze Medalist</strong> in Tianchi Global Data Intelligence Competition</li>
+						</ul>
+
+						<header>
+							<h4>Honors</h4>
+						</header>
+
+						<ul>
+							<li>[2022] Excellent Postgraduate in WHU</li>
+							<li>[2021] Excellent Postgraduate in WHU</li>
+							<li>[2016] Merit Undergraduate in NENU</li>
+						</ul>
+
+						<header>
+							<h4>Scholarships</h4>
+						</header>
+
+						<ul>
+							<li>[2022] Ruan Liping Post-Graduate Scholarship in WHU</li>
+							<li>[2022] Outstanding Academic Scholarship (Grade 1) in WHU</li>
+							<li>[2021] Huawei Post-Graduate Scholarship in WHU</li>
+							<li>[2021] Outstanding Academic Scholarship (Grade 1) in WHU</li>
+							<li>[2019] Outstanding Academic Scholarship (Grade 1) in WHU</li>
+							<li>[2016] The First-Class Scholarship in NENU</li>
+							<li>[2016] Outstanding Student Cadres Scholarship in NENU</li>
+							<li>[2016] Academic Specialty Scholarship in NENU</li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Miscellaneous -->
+				<section id="misc" class="seven">
+					<div class="container">
+
+						<header>
+							<h3>Misc.</h3>
+						</header>
+
+						<p> 
+							I am a longtermist. Outside my research, I enjoy outdoor excercise such as jogging, riding, and hiking. 
+						</p>
+
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Erting Pan. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Last updated: June 2023</li> 
+					</ul>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>

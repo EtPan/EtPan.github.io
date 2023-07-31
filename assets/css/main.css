@@ -152,6 +152,9 @@ input, select, textarea {
 			color: inherit;
 			text-decoration: none;
 		}
+	h1 {
+		font-family: "Lato", sans-serif;
+		}
 
 	h2 {
 		font-size: 2em;
@@ -166,6 +169,7 @@ input, select, textarea {
 	h4 {
 		font-size: 1.25em;
 		line-height: 1.5em;
+		margin-bottom: -1em;
 	}
 
 	h5 {
@@ -1763,15 +1767,15 @@ input, select, textarea {
 			width: 100%;
 		}
 
-		.image.avatar48 {
-			width: 48px;
-			height: 48px;
-			background: #f00;
+		.image.avatar {
+			border-radius: 100%;
+			overflow: hidden;
 		}
 
-			.image.avatar48 img {
-				width: 48px;
-				height: 48px;
+			.image.avatar img {
+				border-radius: 100%;
+				display: block;
+				width: 100%;
 			}
 
 		.image.fit {
@@ -2218,7 +2222,7 @@ input, select, textarea {
 			margin: 1em 0 0 0;
 		}
 
-		#logo .image {
+		#logo .avatar {
 			display: block;
 			margin: 0 auto 0 auto;
 			max-width: 35%;
@@ -2307,7 +2311,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 375px;
+		margin-left: 325px;
 	}
 
 		#main > section {
@@ -2346,37 +2350,6 @@ input, select, textarea {
 				padding: 10em 0;
 				background-size: cover;
 				background-position: center center;
-			}
-
-			#main > section.one {
-				background-color: #81918E;
-			}
-			#main > section.invisible {
-				color:rgba(255, 0, 0, 0.01);
-			} 
-
-			#main > section.two {
-				background-color: #f5fafa;
-			}
-
-			#main > section.three {
-				background-color: #ecf1f1;
-			}
-
-			#main > section.four {
-				background-color: #f5fafa;
-			}
-
-			#main > section.five {
-				background-color: #ecf1f1;
-			}
-
-			#main > section.six {
-				background-color: #f5fafa;
-			}
-
-			#main > section.seven {
-				background-color: #ecf1f1;
 			}
 
 
@@ -2419,7 +2392,7 @@ input, select, textarea {
 	/* Main */
 
 		#main > section > .container {
-			padding: 4em 0 2em 0;
+			padding: 2em 0 1em 0;
 		}
 
 }
@@ -2538,8 +2511,9 @@ input, select, textarea {
 
 				#logo {
 					margin: 0.5em 1.25em 1.25em 1.25em;
+					
 				}
-				#logo .image {
+				#logo .avatar {
 					size-adjust: relative;
 					display: block;
 					margin: 0 auto 0 auto;
